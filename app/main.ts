@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
+const { handleOpen } = require('./APIs/handleOpen.ts')
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
@@ -24,10 +25,7 @@ app.on('window-all-closed', () => {
 })
 
 app.whenReady().then(() => {
-  ipcMain.handle('dialog:openFile', () => {
-    console.log('Here in main')
-    console.log(app.getPath('home'))
-  });
+  ipcMain.handle('dialog:openFile', handleOpen);
 
   createWindow();
 
