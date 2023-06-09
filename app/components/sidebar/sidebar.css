@@ -1,0 +1,7 @@
+.app-sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #222;
+  display: block;
+  position: relative;
+}

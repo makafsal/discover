@@ -17,6 +17,8 @@ const createWindow = () => {
     win.setTitle(title)
   })
 
+  mainWindow.setMenuBarVisibility(false);
+  mainWindow.maximize();
   mainWindow.loadFile("./app/index.html");
 }
 

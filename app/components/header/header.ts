@@ -5,12 +5,12 @@ class Header extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
 
     // Apply external styles to the shadow DOM
-    // const linkElem = document.createElement("link");
-    // linkElem.setAttribute("rel", "stylesheet");
-    // linkElem.setAttribute("href", "style.css");
+    const linkElem = document.createElement("link");
+    linkElem.setAttribute("rel", "stylesheet");
+    linkElem.setAttribute("href", "./components/header/header.css");
 
-    // // Attach the created element to the shadow DOM
-    // shadow.appendChild(linkElem);
+    // Attach the created element to the shadow DOM
+    shadow.appendChild(linkElem);
 
 
     const wrapper = document.createElement('div');
