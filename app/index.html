@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./index.css">
-    <script src="./components/sidebar/sidebar.ts" defer></script>
-    <title>Discover</title>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <link rel="stylesheet" id="themeSheetLink" href="./themes/dark.css">
+  <link rel="stylesheet" href="./index.css">
+  <script src="./components/app-body/app-body.ts" defer></script>
+  <script src="./components/sidebar/sidebar.ts" defer></script>
+  <title>Discover</title>
 </head>
 
 <body>
+  <app-body>
     <app-sidebar></app-sidebar>
+  </app-body>
 
-    <script src="./renderer.ts"></script>
-    <script src="./APIs/uiHandlers.ts"></script>
+  <script src="./renderer.ts"></script>
+  <script src="./scripts/init.ts"></script>
+  <!-- <script src="./APIs/uiHandlers.ts"></script>-->
+  <!-- <script src="./scripts/init.ts"></script> -->
 </body>
 
 </html>

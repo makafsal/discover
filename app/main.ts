@@ -1,8 +1,15 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
-const { handleOpen } = require('./APIs/handleOpen.ts')
+// const { handleOpen } = require('./APIs/handleOpen.ts');
+// const { listDirectoryFiles } = require('./APIs/listFiles.ts');
+const { listDirectoryFiles } = require('./services/files.ts')
+
+try {
+  require('electron-reloader')(module)
+} catch (_) { }
 
 const createWindow = () => {
+  console.log(__dirname)
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -27,11 +34,17 @@ app.on('window-all-closed', () => {
 })
 
 app.whenReady().then(() => {
-  ipcMain.handle('dialog:openFile', handleOpen);
+  // ipcMain.handle('dialog:openFile', handleOpen);
+  const home = app.getPath('home');
+  console.log(home)
 
   createWindow();
 
+  ipcMain.handle('listFiles', listDirectoryFiles(home));
+
   app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
-  })
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
+    }
+  });
 });

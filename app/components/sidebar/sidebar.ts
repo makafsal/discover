@@ -13,6 +13,7 @@ class Sidebar extends HTMLElement {
     const wrapper = document.createElement('div');
     wrapper.setAttribute('class', 'app-sidebar');
 
+    wrapper.append(...this.children);
     shadow.appendChild(wrapper);
   }
 }
