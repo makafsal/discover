@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./index.css">
     <script src="./components/header/header.ts" defer></script>
     <title>Hello World!</title>
 </head>
@@ -13,6 +15,10 @@
     <app-header title="Hello world"></app-header>
 
     <button id="btn" type="button">Set</button>
+    <div class="parent">
+        <div class="child">Help</div>
+    </div>
+    <div class="child">AAHAA</div>
 
     <script src="./renderer.ts"></script>
     <script src="./APIs/uiHandlers.ts"></script>
